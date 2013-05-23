@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h1>Twitter Follower Viewer</h1>
+  <p>
+    <button class="btn btn-primary" ng-class="{ disabled : disable == true }" ng-click="getFollowers()">
+      {{ value }}
+    </button>
+  </p>
+  <p>
+    <div class="row-fluid" ng-repeat="follower in followers">
+      <div class="span1">
+        <img ng-src="{{ follower.profile_image_url }}" />
+      </div>
+      <div class="span11 follower-description">
+        <a ng-href="http://twitter.com/{{ follower.screen_name }}" target="_blank">{{ follower.name }}</a><br/>
+        <p>{{follower.description }}</p>
+      </div>
+    </div>
+  </p>
+</div>
