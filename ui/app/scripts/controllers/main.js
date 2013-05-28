@@ -15,10 +15,8 @@ angular.module('uiApp')
         jsRoutes.controllers.Application.getFollowers($scope.cursor).url
       ).success(function(data) {
       data.users.forEach(function(user) {
-        console.log(user);
           $scope.followers.push(user);
       });
-      console.log(data.next_cursor);
       
       $scope.cursor = data.next_cursor;
       if ($scope.cursor != 0) {
